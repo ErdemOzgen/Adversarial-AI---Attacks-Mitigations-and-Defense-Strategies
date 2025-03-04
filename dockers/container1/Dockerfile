@@ -5,12 +5,14 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1
 
-# Install system dependencies required for Pillow and other packages
+# Install system dependencies required for Pillow and other packages, including pkg-config and libsentencepiece-dev
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libjpeg-dev \
     zlib1g-dev \
+    pkg-config \
+    libsentencepiece-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
