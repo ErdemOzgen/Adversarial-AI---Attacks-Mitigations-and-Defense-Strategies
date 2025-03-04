@@ -1,6 +1,7 @@
 #FROM jupyter/minimal-notebook:python-3.9
 
-FROM rar
+# TODO: we need tochange this to the correct image  
+FROM rar  
 
 # Install system dependencies required for Pillow and other packages
 USER root

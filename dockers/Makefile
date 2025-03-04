@@ -14,7 +14,7 @@ build:
 	@for d in $(CONTAINERS); do \
 		image_name=$$(basename $$d); \
 		echo "Building image: $(DOCKER_USER)/$$image_name:latest from directory $$d"; \
-		docker build -t $(DOCKER_USER)/$$image_name:latest $$d; \
+		# docker build -t $(DOCKER_USER)/$$image_name:latest $$d; \
 	done
 
 # Oluşturulan tüm imajları Docker Hub'a gönderir.
