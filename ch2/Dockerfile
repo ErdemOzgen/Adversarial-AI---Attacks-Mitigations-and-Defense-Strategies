@@ -1,40 +1,14 @@
-FROM jupyter/minimal-notebook:python-3.9
+#FROM jupyter/minimal-notebook:python-3.9
 
-# Set environment variables to reduce Python buffering and prevent bytecode generation
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
+FROM rar
 
 # Install system dependencies required for Pillow and other packages
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libjpeg-dev \
-    zlib1g-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+
 
 # Switch back to notebook user for remaining operations
 USER ${NB_UID}
 
-# Install Python packages with version pinning
-# Split into multiple layers to leverage Docker caching
-
-# Install data science packages
-RUN pip install --no-cache-dir \
-    numpy==1.24.* \
-    pandas==2.0.* \
-    matplotlib==3.7.*
-
-# Install Pillow and TensorFlow
-RUN pip install --no-cache-dir \
-    Pillow==9.2.0 \
-    tensorflow==2.15.*
-
-# Install Flask and scikit-learn
-RUN pip install --no-cache-dir \
-    flask==2.3.* \
-    scikit-learn
 
 # Copy application files
 COPY --chown=${NB_UID}:${NB_USER} . /home/jovyan/work

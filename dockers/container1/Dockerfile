@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:python-3.9
+FROM jupyter/minimal-notebook:python-3.10
 
 # Set environment variables to reduce Python buffering and prevent bytecode generation
 ENV PYTHONDONTWRITEBYTECODE=1 \
