@@ -1,7 +1,7 @@
 # Makefile for building and pushing multi-platform Docker images
 
 # Variables (override these with command-line parameters if desired)
-CONTAINER_NAME ?= rar-target-one
+CONTAINER_NAME ?= rar-target-base
 USERNAME       ?= erdemozgen
 TAG            ?= latest
 # Target platforms for buildx; adjust as needed

@@ -1,7 +1,3 @@
-Below is a detailed Markdown handout that you can share with your students. It covers the key points of evasion attacks against deployed AI systems, including their fundamentals, reconnaissance techniques, perturbation methods, and a hands-on FGSM example using the Adversarial Robustness Toolbox (ART).
-
----
-
 # Evasion Attacks against Deployed AI
 
 This handout provides an in-depth overview of evasion attacks in adversarial machine learning. You will learn the fundamentals behind these attacks, the importance of understanding them, and how attackers gather intelligence to craft adversarial examples. A practical example using FGSM (Fast Gradient Sign Method) is also provided.
