@@ -2,6 +2,105 @@
 
 Adversarial AI has evolved beyond the traditional evasion techniques that fool trained models. One of the most insidious forms of adversarial manipulation is the poisoning attack—a method that targets the very foundation of machine learning systems: the data used during training. In this write-up, we delve into the nature of poisoning attacks, examine their various forms and real-world examples, and discuss the defenses available to mitigate their impact.
 
+
+# File Structure Overview
+
+This guide explains the purpose of each file and folder in the  directory and how they relate to the chapter sections on poisoning attacks, backdoor triggers, and defenses. Use this as a roadmap to understand how raw data, processing scripts, experiments, and documentation are organized.
+
+---
+
+## File and Folder Breakdown
+
+### 1. **ch4.md**
+- **What It Is:**  
+  The primary Markdown document for Chapter 4.
+- **Purpose:**  
+  Contains the theoretical background, detailed explanations, and step-by-step instructions covering poisoning attacks, backdoor triggers, and mitigation strategies.
+- **Relation to the Chapter:**  
+  Serves as the written content that accompanies the hands-on experiments and code examples.
+
+---
+
+### 2. **aws/**
+- **What It Is:**  
+  A folder containing AWS-related files.
+- **Purpose:**  
+  Provides configuration scripts, deployment templates, or instructions for running the experiments on AWS.
+- **Relation to the Chapter:**  
+  Demonstrates how to integrate poisoning attack experiments with cloud-based MLOps platforms.
+
+---
+
+### 3. **embraer-190/**
+- **What It Is:**  
+  A directory with raw images of the Embraer 190 aircraft.
+- **Purpose:**  
+  These images can be used for poisoning experiments or as alternative data samples to compare with other aircraft.
+- **Relation to the Chapter:**  
+  Illustrates the diversity of data sources for experiments, similar to using Rutan Boomerang images.
+
+---
+
+### 4. **images/**
+- **What It Is:**  
+  A folder containing various image assets.
+- **Purpose:**  
+  Includes illustrations, figures, and example images used in the chapter to visually explain concepts and show trigger examples.
+- **Relation to the Chapter:**  
+  Supports the theoretical and practical explanations with visual examples.
+
+---
+
+### 5. **models/**
+- **What It Is:**  
+  A directory for storing pre-trained machine learning models.
+- **Purpose:**  
+  Contains the baseline models (e.g., a CNN trained on CIFAR-10) and the modified (poisoned/backdoored) versions.
+- **Relation to the Chapter:**  
+  Used to demonstrate the impact of poisoning attacks and to evaluate the effectiveness of backdoor triggers and mitigation techniques.
+
+---
+
+### 6. **notebooks/**
+- **What It Is:**  
+  A directory containing Jupyter notebooks.
+- **Purpose:**  
+  Provides interactive code examples and hands-on demonstrations of data poisoning attacks, backdoor trigger creation with ART, and defensive strategies.
+- **Relation to the Chapter:**  
+  Enables students to run, modify, and experiment with the code examples that illustrate the chapter’s concepts.
+
+---
+
+### 7. **requirements.txt**
+- **What It Is:**  
+  A text file listing all Python package dependencies.
+- **Purpose:**  
+  Ensures that the correct libraries and versions are installed to run the experiments and notebooks.
+- **Relation to the Chapter:**  
+  Helps students set up their development environment in line with the chapter's code requirements.
+
+---
+
+### 8. **resize_imges.py**
+- **What It Is:**  
+  A Python script for image processing.
+- **Purpose:**  
+  Processes raw images by padding, resizing, and converting them to numpy array representations expected by the models.
+- **Relation to the Chapter:**  
+  Prepares raw images (from folders like `rutan-bumerang/` and `embraer-190/`) for use in poisoning experiments.
+
+---
+
+### 9. **resized-images-embaer/**
+- **What It Is:**  
+  A directory containing resized images of the Embraer 190 aircraft.
+- **Purpose:**  
+  Holds processed versions of the raw Embraer images, ensuring consistent dimensions for model input.
+- **Relation to the Chapter:**  
+  Provides ready-to-use data for experiments, similar to the Rutan Boomerang images.
+
+---
+
 ## 1. Understanding Poisoning Attacks
 
 ### Definition and Core Concept
